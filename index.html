@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<title>Toots Training Time</title>
+</head>
+<body>
+
+	<header>
+		<h1>Toots Training Time</h1>
+	</header>
+
+	<main>
+
+		<div class="generator">
+		
+			<h2>Generate your workout</h2>
+			
+			<div class="buttons">
+				<button onclick="generateWarmUp()">Warm Up</button>
+				<button onclick="generateUpper()">Upper Body</button>
+				<button onclick="generateLower()">Lower Body</button>
+				<button onclick="generateCore()">Core</button>
+				<button onclick="generateCardio()">Cardio</button>
+			</div>
+
+			<div class="workoutlist">
+		
+				<div class="row">
+					<div class="column1">
+						<h3 id="warmUpHeader">Dynamic Warm Up:</h3>
+					</div>
+					<div class="column2">
+						<span id="warmup1"></span><br>
+						<span id="warmup2"></span><br>
+						<span id="warmup3"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="column1">		
+						<h3 id="upperHeader">Upper:</h3>
+					</div>
+					<div class="column2">
+						<span id="upper1"></span><br>
+						<span id="upper2"></span><br>
+						<span id="upper3"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="column1">	
+						<h3 id="lowerHeader">Lower:</h3>
+					</div>
+					<div class="column2">
+						<span id="lower1"></span><br>
+						<span id="lower2"></span><br>
+						<span id="lower3"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="column1">
+						<h3 id="coreHeader">Core:</h3>
+					</div>
+					<div class="column2">	
+						<span id="core1"></span><br>
+						<span id="core2"></span><br>
+						<span id="core3"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="column1">
+						<h3 id="cardioHeader">Cardio:</h3>
+					</div>
+					<div class="column2">
+						<span id="cardio"></span>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="timer">
+
+			<h2>Time your workout</h2>
+			<button class="goButton" onclick="countdown()">Go</button>
+			<audio id="clockSound" src="beep.mp3"></audio>
+			<p id="timer">30</p>
+			<button id="resetButton">Reset</button>
+
+		</div>
+
+	</main>
+
+	<script type="text/javascript" src="javascript.js"></script>
+</body>
+</html>
