@@ -1,3 +1,4 @@
+
 var warmUp = [
 	'Calf Stretch',
 	'Hamstring Stretch',
@@ -68,15 +69,23 @@ var cardioWorkout = [
 	'Mountain climber',
 	'Turkish getup',
 	'Ybell Clean and Press'
-];
+]; 
 
+
+function generateFullBody() {
+	generateWarmUp();
+	generateUpper();
+	generateLower();
+	generateCore();
+	generateCardio();
+}
 
 function generateWarmUp() {
 	var warmUpHeader = document.querySelector('#warmUpHeader');
 	var warmUpText1 = document.querySelector('#warmup1');
 	var warmUpText2 = document.querySelector('#warmup2');
 	var warmUpText3 = document.querySelector('#warmup3');
-	var b = warmUp.slice()
+	var b = warmUp.slice();
 	var newArr = [];
 
 	for(let i= 0; i<3; i++){
@@ -100,7 +109,7 @@ function generateUpper() {
 	var upperText1 = document.querySelector('#upper1');
 	var upperText2 = document.querySelector('#upper2');
 	var upperText3 = document.querySelector('#upper3');
-	var b = upperWorkout.slice()
+	var b = upperWorkout.slice();
 	var newArr = [];
 
 	for(let i= 0; i<3; i++){
@@ -124,7 +133,7 @@ function generateLower() {
 	var lowerText1 = document.querySelector('#lower1');
 	var lowerText2 = document.querySelector('#lower2');
 	var lowerText3 = document.querySelector('#lower3');
-	var b = lowerWorkout.slice()
+	var b = lowerWorkout.slice();
 	var newArr = [];
 
 	for(let i= 0; i<3; i++){
@@ -148,7 +157,7 @@ function generateCore() {
 	var coreText1 = document.querySelector('#core1');
 	var coreText2 = document.querySelector('#core2');
 	var coreText3 = document.querySelector('#core3');
-	var b = coreWorkout.slice()
+	var b = coreWorkout.slice();
 	var newArr = [];
 
 	for(let i= 0; i<3; i++){
@@ -178,23 +187,29 @@ function generateCardio() {
 }
 
 
-// TIMER
+// TIMER warm up 30, work 30, rest 30, work 30, rest 30, work 30, rest 60
 
 var countdownVar;
+var countdownVar2;
 var resetButton = document.getElementById("resetButton");
 
 
 function countdown() {
   var sec = 30;
   var clockSound = document.getElementById("clockSound");
+  var timerHeader = document.getElementById("timerHeader");
+  var body = document.querySelector("body");
   
+  //warm up
   countdownVar = setInterval(function() {
+    timerHeader.innerHTML = "Warm up";
     document.getElementById("timer").innerHTML = sec;
     sec--;
     resetButton.style.display = "inline-block";
-    if (sec < 0) {
+    if (sec < 0 && timerHeader.innerHTML == "Warm up") {
       sec = 30;
       clockSound.play();
+      timerHeader.innerHTML = "Work!";
     } 
   }, 1000);
 }
